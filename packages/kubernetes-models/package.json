@@ -31,13 +31,13 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@kubernetes-models/base": "^1.5.2",
-    "@kubernetes-models/validate": "^1.4.2",
+    "@kubernetes-models/base": "workspace:*",
+    "@kubernetes-models/validate": "workspace:*",
     "tslib": "^2.0.3"
   },
   "devDependencies": {
-    "@kubernetes-models/export-map": "^0.4.2",
-    "@kubernetes-models/openapi-generate": "^1.4.2",
+    "@kubernetes-models/export-map": "workspace:*",
+    "@kubernetes-models/openapi-generate": "workspace:*",
     "rimraf": "^3.0.2"
   }
 }

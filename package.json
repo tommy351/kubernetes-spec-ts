@@ -16,11 +16,9 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.cjs,.mjs",
-    "build": "tsc-multi packages/openapi-generate packages/crd-generate packages/export-map && lerna run build --stream && tsc-multi",
+    "build": "tsc-multi packages/openapi-generate packages/crd-generate packages/export-map && pnpm recursive run build && tsc-multi",
     "watch": "npm run build -- --watch",
-    "clean": "rm -rf packages/*/dist && tsc-multi --clean && lerna run clean",
-    "bootstrap": "lerna bootstrap",
-    "prepack": "lerna run prepack",
+    "clean": "rm -rf packages/*/dist && tsc-multi --clean && pnpm recursive run clean",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "new-crd-package": "ts-node scripts/new-crd-package.ts"
   },
@@ -51,7 +49,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
     "jest": "^26.6.3",
-    "lerna": "^3.22.1",
     "lint-staged": "^10.4.0",
     "make-dir": "^3.1.0",
     "npm-run-all": "^4.1.5",

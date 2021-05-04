@@ -54,7 +54,7 @@ const args = yargs
       build: "npm-run-all build:*",
       postbuild: "export-map generate --cwd gen --export gen/export-map.json",
       prepack:
-        "cp package.json README.md dist/ && export-map inject --package dist/package.json --export gen/export-map.json",
+        "publish-scripts prepack && export-map inject --package dist/package.json --export gen/export-map.json",
       clean: "rimraf gen"
     },
     publishConfig: {
@@ -74,6 +74,7 @@ const args = yargs
     devDependencies: {
       "@kubernetes-models/crd-generate": "workspace:*",
       "@kubernetes-models/export-map": "workspace:*",
+      "@kubernetes-models/publish-scripts": "workspace:*",
       "npm-run-all": "^4.1.5",
       rimraf: "^3.0.2"
     }

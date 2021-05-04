@@ -1,0 +1,19 @@
+{
+  "name": "@kubernetes-models/publish-scripts",
+  "version": "0.0.0",
+  "private": true,
+  "bin": {
+    "publish-scripts": "./bin/publish-scripts.js"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "yargs": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.11",
+    "@types/yargs": "^16.0.1"
+  }
+}

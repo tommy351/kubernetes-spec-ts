@@ -1,5 +1,5 @@
 {
-  "name": "kubernetes-models",
+  "name": "@kubernetes-models/monorepo",
   "version": "0.0.0",
   "private": true,
   "description": "Kubernetes models",
@@ -16,11 +16,12 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.cjs,.mjs",
-    "build": "tsc-multi packages/openapi-generate packages/crd-generate packages/export-map && pnpm recursive run build && tsc-multi",
+    "build": "tsc-multi packages/openapi-generate packages/crd-generate packages/export-map && pnpm recursive --filter '!@kubernetes-models/monorepo' run build && tsc-multi",
     "watch": "npm run build -- --watch",
-    "clean": "rm -rf packages/*/dist && tsc-multi --clean && pnpm recursive run clean",
+    "clean": "rm -rf packages/*/dist && tsc-multi --clean && pnpm recursive --filter '!@kubernetes-models/monorepo' run clean",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-    "new-crd-package": "ts-node scripts/new-crd-package.ts"
+    "new-crd-package": "ts-node scripts/new-crd-package.ts",
+    "preinstall": "npx only-allow pnpm"
   },
   "husky": {
     "hooks": {
